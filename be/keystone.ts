@@ -1,6 +1,7 @@
 import 'dotenv/config';
 import { createAuth } from '@keystone-next/auth';
 import { config, createSchema } from '@keystone-next/keystone/schema';
+import { Product } from './schemas/Product';
 import { User } from './schemas/User';
 import {
   withItemData,
@@ -42,6 +43,7 @@ export default withAuth(
     lists: createSchema({
       // TODO add schema items
       User,
+      Product,
     }),
     ui: {
       // Show the ui only for people that pass this test
