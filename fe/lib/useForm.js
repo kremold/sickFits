@@ -12,7 +12,7 @@ export default function useForm(initial = {}) {
       value = parseInt(value);
     }
     if (type === 'file') {
-      value[0] = e.target.files;
+      [value] = e.target.files; // give me the first thing out of e.target array and stick the value in there
     }
 
     setInputs({
