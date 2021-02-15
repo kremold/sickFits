@@ -53,7 +53,8 @@ export default function SingleProduct({ id }) {
         alt={Product.photo.altText}
       />
       <div className="details">
-        <h2>{Product.name}</h2>;<p>{Product.description}</p>
+        <h2>{Product.name}</h2>
+        <p>{Product.description}</p>
       </div>
     </ProductStyles>
   );
