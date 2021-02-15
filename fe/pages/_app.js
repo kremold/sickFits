@@ -29,6 +29,7 @@ MyApp.getInitialProps = async function ({ Component, ctx }) {
     pageProps = await Component.getInitialProps(ctx);
   }
   pageProps.query = ctx.query; // allows the any queries at a page level
+  return { pageProps };
 };
 
 export default withData(MyApp);
