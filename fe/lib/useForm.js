@@ -1,4 +1,3 @@
-import { object } from 'prop-types';
 import { useState } from 'react';
 
 export default function useForm(initial = {}) {
@@ -8,6 +7,7 @@ export default function useForm(initial = {}) {
   function handleChange(e) {
     let { value, name, type } = e.target; // destructuring the state
     if (type === 'number') {
+      // console.log(value);
       // if input is of type number set it as number rather than a string that html forms return by default
       value = parseInt(value);
     }
@@ -18,7 +18,7 @@ export default function useForm(initial = {}) {
     setInputs({
       // copy the existing state
       ...inputs,
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
   }
 
