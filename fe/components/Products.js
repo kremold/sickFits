@@ -30,7 +30,7 @@ const ProductsListStyles = styled.div`
 export default function Products({ page }) {
   const { data, error, loading } = useQuery(ALL_PRODUCTS_QUERY, {
     variables: {
-      skip: page * perPage,
+      skip: page * perPage - perPage,
       first: perPage,
     },
   });
