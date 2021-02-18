@@ -7,7 +7,7 @@ import { useUser } from './User';
 import calcTotalPrice from '../lib/calcTotalPrice';
 import { useCart } from '../lib/cartState';
 import RemoveFromCart from './RemoveFromCart';
-import CheckOut from './Checkout';
+import { CheckOut } from './Checkout';
 
 const CartItemStyles = styled.li`
   padding: 1rem 0;
