@@ -7,6 +7,7 @@ import { useUser } from './User';
 import calcTotalPrice from '../lib/calcTotalPrice';
 import { useCart } from '../lib/cartState';
 import RemoveFromCart from './RemoveFromCart';
+import { CheckOut } from './Checkout';
 
 const CartItemStyles = styled.li`
   padding: 1rem 0;
@@ -67,6 +68,7 @@ export default function Cart() {
       </ul>
       <footer>
         <p>{formatMoney(calcTotalPrice(me.cart))}</p>
+        <CheckOut />
       </footer>
     </CartStyles>
   ); // style component use a prop named open
