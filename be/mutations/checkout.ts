@@ -67,7 +67,7 @@ async function checkout(
       throw new Error(err.message);
     });
   console.log(charge);
-  // 4. convert te cartitems to orderitems
+  // 4. convert the cartitems to orderitems
   const orderItems = cartItems.map((cartItem) => {
     const orderItem = {
       name: cartItem.product.name,
@@ -85,7 +85,7 @@ async function checkout(
       total: charge.amount,
       charge: charge.id,
       items: { create: orderItems },
-      // user: { connect: { id: userId } },
+      user: { connect: { id: userId } },
     },
   });
   // 6. Clean up any old cart item
