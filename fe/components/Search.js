@@ -84,7 +84,7 @@ export default function Search() {
         {isOpen &&
           items.map((item, index) => (
             <DropDownItem
-              {...getItemProps({ item })}
+              {...getItemProps({ item, index })}
               key={item.id}
               highlighted={index === highlightedIndex}
             >
