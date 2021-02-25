@@ -5,6 +5,8 @@ import PriceTag from './styles/PriceTag';
 import formatMoney from '../lib/formatMoney';
 import DeleteProduct from './DeleteProduct';
 import AddToCart from './AddToCart';
+import UserCheck from './UserCheck';
+import PleasSignIn from './PleasSignIn';
 
 export default function Product({ product }) {
   return (
@@ -19,18 +21,24 @@ export default function Product({ product }) {
       <PriceTag>{formatMoney(product.price)}</PriceTag>
       <p>{product.description}</p>
       <div className="buttonList">
-        <Link
-          href={{
-            pathname: 'update',
-            query: {
-              id: product.id,
-            },
-          }}
-        >
-          Edit ✏️
-        </Link>
-        <AddToCart id={product.id} />
-        <DeleteProduct id={product.id}>Delete</DeleteProduct>
+        <UserCheck>
+          <Link
+            href={{
+              pathname: 'update',
+              query: {
+                id: product.id,
+              },
+            }}
+          >
+            Edit ✏️
+          </Link>
+        </UserCheck>
+        <PleasSignIn>
+          <AddToCart id={product.id} />
+        </PleasSignIn>
+        <UserCheck>
+          <DeleteProduct id={product.id}>Delete</DeleteProduct>
+        </UserCheck>
       </div>
     </ItemStyles>
   );
